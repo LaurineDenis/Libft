@@ -6,7 +6,7 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 06:03:27 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/26 06:59:28 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/11/28 13:08:15 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,10 @@ char		*ft_itoa(int n)
 		i++;
 	if (!(ret = (char *)ft_calloc(sizeof(char), i + 1)))
 		return (NULL);
-	while (nb > 0)
-	{
+	ret[--i] = ((nb % 10) + '0');
+	while ((nb = nb / 10) > 0)
 		ret[--i] = ((nb % 10) + '0');
-		nb = nb / 10;
-	}
 	if (i != 0)
 		ret[0] = '-';
-	if (n == 0)
-		ret[0] = '0';
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 11:49:47 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/27 11:55:24 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/11/28 15:01:48 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	del(lst);
+	free(lst->content);
 }
