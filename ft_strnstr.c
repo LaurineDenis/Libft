@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 14:23:25 by fle-biha          #+#    #+#             */
-/*   Updated: 2020/11/25 14:49:52 by edassess         ###   ########lyon.fr   */
+/*   Created: 2020/11/28 17:21:21 by ldenis            #+#    #+#             */
+/*   Updated: 2020/11/28 18:33:42 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t		mem_len;
 
 	mem_len = len;
-	if (haystack[0] == 0)
-		return (0);
 	if (needle[0] == 0)
 		return ((char *)haystack);
+	if (haystack[0] == 0)
+		return (0);
 	if (len == 0)
 		return (NULL);
 	i = -1;

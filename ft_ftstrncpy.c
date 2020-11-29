@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_ftstrncpy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 17:20:11 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/29 17:23:33 by ldenis           ###   ########lyon.fr   */
+/*   Created: 2020/11/28 17:14:57 by ldenis            #+#    #+#             */
+/*   Updated: 2020/11/28 17:15:00 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memcpy(void *dest, const void *src, size_t n)
+char		*ft_ftstrncpy(char *src, unsigned int n)
 {
-	unsigned char	*tmp_dest;
-	unsigned char	*tmp_src;
-	size_t			i;
+	unsigned int	i;
+	char			*dst;
 
-	tmp_dest = (unsigned char *)dest;
-	tmp_src = (unsigned char *)src;
-	i = -1;
-	if (dest == 0 && src == 0)
-		return (0);
-	while (++i < n)
-		tmp_dest[i] = tmp_src[i];
-	return (dest);
+	i = 0;
+	if (!(dst = ft_calloc(1, n + 1)))
+		return (NULL);
+	while (i < n && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
 }

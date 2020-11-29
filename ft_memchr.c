@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 12:46:11 by fle-biha          #+#    #+#             */
-/*   Updated: 2020/11/26 09:02:08 by ldenis           ###   ########lyon.fr   */
+/*   Created: 2020/11/28 17:19:55 by ldenis            #+#    #+#             */
+/*   Updated: 2020/11/28 18:31:39 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ void		*ft_memchr(const void *s, int c, size_t n)
 	tmp_s = (char *)s;
 	i = -1;
 	j = 0;
-	if (!c)
+	if (!c && n)
 		return (tmp_s + ft_strlen(s));
-	while (tmp_s[++i] && j < n)
+	while (j < n)
 	{
+		i++;
 		if (tmp_s[i] == c)
 			return (tmp_s + i);
 		j++;

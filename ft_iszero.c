@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_iszero.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 09:50:12 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/26 09:52:00 by ldenis           ###   ########lyon.fr   */
+/*   Created: 2020/11/28 17:14:32 by ldenis            #+#    #+#             */
+/*   Updated: 2020/11/28 17:15:39 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_lstsize(t_list *lst)
+int		ft_iszero(int i)
 {
-	int		i;
-
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
+	if (i == 0)
+		return (0);
+	else
+		return (1);
 }

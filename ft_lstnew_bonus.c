@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 11:49:47 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/28 15:01:48 by ldenis           ###   ########lyon.fr   */
+/*   Created: 2020/11/29 17:38:17 by ldenis            #+#    #+#             */
+/*   Updated: 2020/11/29 17:41:05 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+t_list		*ft_lstnew_bonus(void *content)
 {
-	del(lst);
-	free(lst->content);
+	t_list	*element;
+
+	if (!(element = malloc(sizeof(*element))))
+		return (NULL);
+	element->content = content;
+	element->next = NULL;
+	return (element);
 }

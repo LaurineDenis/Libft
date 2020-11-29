@@ -6,7 +6,7 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 19:36:09 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/26 05:14:26 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/11/29 14:00:48 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,20 @@ static int		counter_word(const char *str, char set)
 	return (counter);
 }
 
+static void		*free_tab(char **tab, int j)
+{
+	int		i;
+
+	i = 0;
+	while (i < j)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return (NULL);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	char	**split;
@@ -66,11 +80,11 @@ char			**ft_split(char const *s, char c)
 			tmp = i;
 			while (s[++i] != c && s[i])
 				count_sep++;
-			split[j++] = ft_strncpy((char *)s + tmp, count_sep);
+			if (!(split[j++] = ft_strncpy((char *)s + tmp, count_sep)))
+				return (free_tab(split, j));
 		}
 		else
 			i++;
 	}
-	split[j] = 0;
 	return (split);
 }
