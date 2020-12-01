@@ -6,13 +6,13 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:14:57 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/28 17:15:00 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 15:49:38 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_ftstrncpy(char *src, unsigned int n)
+char		*ft_strncpy(char *src, unsigned int n)
 {
 	unsigned int	i;
 	char			*dst;

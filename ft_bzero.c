@@ -6,7 +6,7 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 17:27:37 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/24 17:27:39 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:18:27 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ void		ft_bzero(void *s, size_t n)
 
 	i = 0;
 	tmp = (char *)s;
-	while (i < n)
-		tmp[i++] = 0;
+	ft_memset(s, 0, n);
 }

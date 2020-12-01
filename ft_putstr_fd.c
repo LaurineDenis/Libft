@@ -6,7 +6,7 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 08:05:42 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/26 08:08:22 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:19:23 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-
-	i = -1;
-	while (s[++i])
-		ft_putchar_fd(s[i], fd);
+	write(fd, s, ft_strlen(s));
 }

@@ -6,7 +6,7 @@
 #    By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/24 11:44:21 by ldenis            #+#    #+#              #
-#    Updated: 2020/12/01 09:50:27 by ldenis           ###   ########lyon.fr    #
+#    Updated: 2020/12/01 16:16:36 by ldenis           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,16 +27,6 @@ ft_ftstrncpy.c ft_counterword.c ft_iszero.c
 
 OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
-# Colors
-GREY=$'\x1b[30m'
-RED=$'\x1b[31m'
-GREEN=$'\x1b[32m'
-YELLOW=$'\x1b[33m'
-BLUE=$'\x1b[34m'
-PURPLE=$'\x1b[35m'
-CYAN=$'\x1b[36m'
-WHITE=$'\x1b[37m'
-
 HEADER		= libft.h
 
 RM			=	rm -f
@@ -45,21 +35,21 @@ CC			=	gcc
 
 CFLAGS		=	-Wall -Werror -Wextra
 
-.c.o:
-			@${CC} ${CFLAGS} -I includes -c $< -o $@
+%.o:		%.c libft.h
+			${CC} ${CFLAGS} -I includes -c $< -o $@
 
 $(NAME):	all
 
 all:		${OBJS}
-			@ar rcs ${NAME} ${OBJS}
+			ar rcs ${NAME} ${OBJS}
 
 bonus:		${OBJS_BONUS} ${OBJS}
-			@ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
+			ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
 
 clean:
-			@${RM}  ${OBJS} ${OBJS_BONUS}
+			${RM}  ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
-			@${RM} ${NAME}
+			${RM} ${NAME}
 
 re:			fclean all

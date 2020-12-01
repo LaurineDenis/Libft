@@ -6,7 +6,7 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:18:45 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/28 17:18:47 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:11:49 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *str)
 {
-	long int res;
-	long int sign;
+	int res;
+	int sign;
 
 	res = 0;
 	sign = 1;
