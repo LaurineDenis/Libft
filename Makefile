@@ -6,7 +6,7 @@
 #    By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/24 11:44:21 by ldenis            #+#    #+#              #
-#    Updated: 2020/11/29 17:40:20 by ldenis           ###   ########lyon.fr    #
+#    Updated: 2020/12/01 09:50:27 by ldenis           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ SRCS		= ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putchar_fd.c \
 
 OBJS		= ${SRCS:.c=.o}
 
-SRCS_BONUS	= ft_lstmap_bonus.c ft_lstiter_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c \
-ft_lstadd_back_bonus.c ft_lstlast_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c ft_lstnew_bonus.c\
-ft_ftstrncpy_bonus.c ft_counterword_bonus.c ft_iszero_bonus.c
+SRCS_BONUS	= ft_lstmap.c ft_lstiter.c ft_lstclear.c ft_lstdelone.c \
+ft_lstadd_back.c ft_lstlast.c ft_lstsize.c ft_lstadd_front.c ft_lstnew.c\
+ft_ftstrncpy.c ft_counterword.c ft_iszero.c
 
 OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 

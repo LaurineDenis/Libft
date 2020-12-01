@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/29 17:38:09 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/29 17:41:09 by ldenis           ###   ########lyon.fr   */
+/*   Created: 2020/11/29 17:38:36 by ldenis            #+#    #+#             */
+/*   Updated: 2020/12/01 09:47:47 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize_bonus(t_list *lst)
+t_list		*ft_lstlast(t_list *lst)
 {
-	int		i;
-
-	i = 0;
-	while (lst)
+	if (lst)
 	{
-		lst = lst->next;
-		i++;
+		while (lst->next)
+		{
+			lst = lst->next;
+		}
+		return (lst);
 	}
-	return (i);
+	return (NULL);
 }

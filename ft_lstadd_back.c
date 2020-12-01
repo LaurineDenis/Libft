@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 13:31:12 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/29 17:40:46 by ldenis           ###   ########lyon.fr   */
+/*   Created: 2020/11/26 09:57:44 by ldenis            #+#    #+#             */
+/*   Updated: 2020/12/01 09:47:15 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter_bonus(t_list *lst, void (*f)(void *))
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	while (lst)
+	t_list		*last;
+
+	last = (*alst);
+	if (!(*alst))
+		(*alst) = new;
+	else
 	{
-		f(lst->content);
-		lst = lst->next;
+		(*alst) = ft_lstlast(*alst);
+		(*alst)->next = new;
+		(*alst) = last;
 	}
 }

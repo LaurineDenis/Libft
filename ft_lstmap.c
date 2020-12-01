@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/29 17:38:17 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/29 17:41:05 by ldenis           ###   ########lyon.fr   */
+/*   Created: 2020/11/29 17:38:28 by ldenis            #+#    #+#             */
+/*   Updated: 2020/12/01 09:47:55 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew_bonus(void *content)
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*element;
+	t_list		*new;
+	t_list		*begin;
 
-	if (!(element = malloc(sizeof(*element))))
-		return (NULL);
-	element->content = content;
-	element->next = NULL;
-	return (element);
+	new = NULL;
+	begin = new;
+	while (lst)
+	{
+		new = ft_lstnew((*f)(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&begin, (*del));
+			return (NULL);
+		}
+		ft_lstadd_back(&begin, new);
+		lst = lst->next;
+	}
+	return (begin);
 }

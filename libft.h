@@ -6,7 +6,7 @@
 /*   By: ldenis <ldenis@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:18:32 by ldenis            #+#    #+#             */
-/*   Updated: 2020/11/29 17:39:51 by ldenis           ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 09:49:53 by ldenis           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,15 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-t_list				*ft_lstnew_bonus(void *content);
-void				ft_lstadd_front_bonus(t_list **alst, t_list *new);
-int					ft_lstsize_bonus(t_list *lst);
-t_list				*ft_lstlast_bonus(t_list *lst);
-void				ft_lstadd_back_bonus(t_list **alst, t_list *new);
-void				ft_lstdelone_bonus(t_list *lst, void (*del)(void*));
-void				ft_lstclear_bonus(t_list **lst, void (*del)(void*));
-void				ft_lstiter_bonus(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap_bonus(t_list *lst, void *(*f)(void *)\
-, void (*del)(void *));
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **alst, t_list *new);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_back(t_list **alst, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void*));
+void				ft_lstclear(t_list **lst, void (*del)(void*));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char				*ft_ftstrncpy(char *src, unsigned int n);
 int					ft_counter_word(const char *str, char set);
 int					ft_iszero(int i);
